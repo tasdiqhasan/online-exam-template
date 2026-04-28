@@ -5,8 +5,8 @@ This project is an online exam platform currently in the early development stage
 Static HTML layout for:
 - [x] Login page
 - [x] Welcome Screen
-- [ ] Exam page
-- [ ] Result page
+- [x] Exam page
+- [x] Result page
 - [ ] Admin Dashboard
 - [ ] User Management
 - [ ] Question Bank
