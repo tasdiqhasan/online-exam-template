@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Admin | Online Exam Platform</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;family=Lexend:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-surface": "#2d3133",
+                        "tertiary": "#943700",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-container": "#57657a",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#2563eb",
+                        "primary": "#004ac6",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#eeefff",
+                        "secondary-container": "#d5e3fc",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "tertiary-container": "#bc4800",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-container": "#ffede6",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#737686",
+                        "on-error": "#ffffff",
+                        "secondary": "#515f74",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-tint": "#0053db",
+                        "surface": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "touch-target": "44px",
+                        "container-max-width": "800px",
+                        "section-gap": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "question-text": ["Lexend"],
+                        "label-bold": ["Public Sans"],
+                        "button": ["Public Sans"],
+                        "h2": ["Public Sans"],
+                        "display": ["Public Sans"],
+                        "body": ["Lexend"],
+                        "label-sm": ["Public Sans"],
+                        "h1": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "question-text": ["20px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "button": ["16px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "h1": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background font-body">
+    <!-- SideNavBar -->
+    <aside
+        class="h-screen w-64 border-r border-slate-200 dark:border-slate-800 fixed left-0 top-0 bg-white dark:bg-slate-900 font-public-sans antialiased text-sm border-r border-slate-200 dark:border-slate-800 flex flex-col h-full py-6 z-50">
+        <div class="px-6 mb-8">
+            <h1 class="text-lg font-bold text-blue-600 dark:text-blue-400">Admin Portal</h1>
+            <p class="text-xs text-slate-500 font-medium">Exam Management</p>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-r-4 border-blue-600 font-semibold active:scale-[0.98] transition-transform"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-[0.98] transition-transform"
+                href="#">
+                <span class="material-symbols-outlined">quiz</span>
+                Exam Sessions
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-[0.98] transition-transform"
+                href="#">
+                <span class="material-symbols-outlined">database</span>
+                Question Bank
+            </a>
+
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-[0.98] transition-transform"
+                href="#">
+                <span class="material-symbols-outlined">group</span>
+                User Management
+            </a>
+        </nav>
+        <div class="px-4 mb-6">
+            <button
+                class="w-full bg-primary-container text-on-primary-container font-button py-3 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined">add</span>
+                New Exam
+            </button>
+        </div>
+        <div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+                href="../login.html">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+        </div>
+    </aside>
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-slate-200 dark:border-slate-800 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md font-public-sans text-sm tracking-tight">
+        <div class="flex justify-between items-center px-8 h-full">
+            <div class="flex items-center gap-8">
+                <span class="text-xl font-black text-blue-600 dark:text-blue-400">Online Exam Platform</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3 border-l pl-4 border-slate-200 ml-2">
+                    <div
+                        class="flex items-center gap-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 px-3 py-1.5 rounded-lg">
+                        <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">notifications</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 px-3 py-1.5 rounded-lg">
+                        <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">account_circle</span>
+                        <span
+                            class="font-label-bold text-label-bold text-slate-600 dark:text-slate-400">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+        <div class="max-w-[1200px] mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                <div>
+                    <h1 class="font-h1 text-h1 text-on-background mb-2">Platform Overview</h1>
+                    <p class="text-secondary font-body">Manage exam content and monitor platform activity in real-time.
+                    </p>
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-6 py-3 rounded-xl font-button flex items-center gap-2 hover:opacity-90 transition-opacity">
+                    <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Create Question
+                </button>
+            </div>
+            <!-- Bento Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div
+                    class="md:col-span-2 bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="p-2 bg-blue-50 text-blue-600 rounded-lg material-symbols-outlined"
+                            data-icon="person">person</span>
+                        <span class="text-emerald-600 text-sm font-label-bold flex items-center">+12% vs last
+                            week</span>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 font-label-sm uppercase tracking-wider mb-1">Active Examinees</p>
+                        <h3 class="text-4xl font-display font-bold">1,284</h3>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200">
+                    <span class="p-2 bg-amber-50 text-amber-600 rounded-lg material-symbols-outlined mb-4"
+                        data-icon="pending">pending</span>
+                    <p class="text-slate-500 font-label-sm uppercase tracking-wider mb-1">Pending Reviews</p>
+                    <h3 class="text-2xl font-display font-bold">42</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200">
+                    <span class="p-2 bg-emerald-50 text-emerald-600 rounded-lg material-symbols-outlined mb-4"
+                        data-icon="check_circle">check_circle</span>
+                    <p class="text-slate-500 font-label-sm uppercase tracking-wider mb-1">Pass Rate</p>
+                    <h3 class="text-2xl font-display font-bold">88.4%</h3>
+                </div>
+            </div>
+            <!-- Content Split View -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Questions Management (List Style) -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="font-h2 text-h2">Recent Questions</h2>
+                        <a class="text-primary font-label-bold hover:underline" href="#">View Bank</a>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Question Card 1 -->
+                        <div
+                            class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span
+                                            class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase">Mathematics</span>
+                                        <span class="text-slate-400 text-xs font-label-sm">• ID: #8821</span>
+                                    </div>
+                                    <h4 class="font-question-text text-lg text-slate-900 mb-4">Calculate the derivative
+                                        of the function f(x) = sin(x) + 3x² at x = 0.</h4>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-primary transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                                            Edit
+                                        </button>
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-error transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="delete">delete</span>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-blue-500 cursor-pointer"
+                                        data-icon="bookmark">bookmark</span>
+                                    <span class="text-xs text-slate-400 font-label-sm">Used 450x</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Question Card 2 -->
+                        <div
+                            class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span
+                                            class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase">World
+                                            History</span>
+                                        <span class="text-slate-400 text-xs font-label-sm">• ID: #8754</span>
+                                    </div>
+                                    <h4 class="font-question-text text-lg text-slate-900 mb-4">Which treaty formally
+                                        ended World War I in 1919?</h4>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-primary transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                                            Edit
+                                        </button>
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-error transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="delete">delete</span>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-blue-500 cursor-pointer"
+                                        data-icon="bookmark">bookmark</span>
+                                    <span class="text-xs text-slate-400 font-label-sm">Used 1.2kx</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Question Card 3 -->
+                        <div
+                            class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors group">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span
+                                            class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-bold rounded uppercase">Computer
+                                            Science</span>
+                                        <span class="text-slate-400 text-xs font-label-sm">• ID: #8712</span>
+                                    </div>
+                                    <h4 class="font-question-text text-lg text-slate-900 mb-4">Identify the time
+                                        complexity of the standard Merge Sort algorithm.</h4>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-primary transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                                            Edit
+                                        </button>
+                                        <button
+                                            class="flex items-center gap-1.5 text-slate-500 hover:text-error transition-colors font-label-sm">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="delete">delete</span>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-end gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-slate-300 group-hover:text-blue-500 cursor-pointer"
+                                        data-icon="bookmark">bookmark</span>
+                                    <span class="text-xs text-slate-400 font-label-sm">Used 890x</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Active Users Sidebar (Asymmetric Card Layout) -->
+                <div>
+                    <h2 class="font-h2 text-h2 mb-6">Live Activity</h2>
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                            <span class="text-xs font-label-bold text-slate-500 uppercase">Currently Testing</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        </div>
+                        <div class="divide-y divide-slate-100">
+                            <!-- User row -->
+                            <div class="p-4 flex items-center gap-3">
+                                <img alt="Avatar" class="w-10 h-10 rounded-full object-cover"
+                                    data-alt="professional portrait of a young man with a friendly smile and clean casual attire"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCjd8cLgxDxsOKfa1VrU0lUHuiA76sgiolT923wNpZkq8xGc1QfU2x94J40dL6uFIbMo0QCiyLR-_qQM5kpuZePwhwMZOORAWEtgKSqR2IyHpuyVdY_DgOtW9u1wEUPR33UOOP3zIvw4d-jaq3tooaSsF3FyhjlTtSh5bKavFuoBO7G8yJHLudI6SWGVcsS7qG_EiOjiVqd-yHWx7d85KdS_MLksgDYX8hcm50l6I6Q1TqQPnMmHmkv97zWNqlNQTTxAuRLcHpEw" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-label-bold text-slate-900">David Chen</p>
+                                    <p class="text-[10px] text-slate-400">GRE Practice Exam • Q14/40</p>
+                                </div>
+                                <span
+                                    class="text-[10px] font-label-sm text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Active</span>
+                            </div>
+                            <!-- User row -->
+                            <div class="p-4 flex items-center gap-3">
+                                <img alt="Avatar" class="w-10 h-10 rounded-full object-cover"
+                                    data-alt="portrait of a confident woman in a brightly lit modern office environment with soft focus background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYeqGR96EVyAyWefx22v1pI4cPU7HpjSRyk2ko-pklqYWNNc650jUlP2v7vGM9U7RMADgldnVdWU8fh3sP_Et_szPIqpTinp6vyn3pej9CMNlZIREEyalEbplOFID779R_UPvdBhTmk-lUeyi7pwq3wAds0msbAS72ZubfdrCfu_zCbkzZIrsfdPmrVlJeNR0daRf9aCDbwPnzLK0JKAqk3S_zfYtG2hPuAAWr1-hcs4AlO-pQGbBnriwyZE7HGp5b2xs6Z_Tm2MU" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-label-bold text-slate-900">Sarah Miller</p>
+                                    <p class="text-[10px] text-slate-400">Bio Final • Q38/50</p>
+                                </div>
+                                <span
+                                    class="text-[10px] font-label-sm text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Active</span>
+                            </div>
+                            <!-- User row -->
+                            <div class="p-4 flex items-center gap-3">
+                                <img alt="Avatar" class="w-10 h-10 rounded-full object-cover"
+                                    data-alt="close up of a man with spectacles looking thoughtfully into the camera against a neutral studio backdrop"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9uIefYXYZd00oYvZsBfiNKrzkibi2YRto2AJNkGfaL7VTiXHgeVUgVTZWdIOeYseB_RjJpIIHjGWP31OdMkMKZ8ouO1_eINZ4Vd0QMku6Co63X2Wu6z1tmww2cMVJCsZBHuTnRNiQSoGBfqXFBn8UkE84uuPee7whYbWFdorKwJ5bK-CdJBv1QsjBMsPjm22CShtuqw2L0rQcCkNBx3KRDBn1IcDUxdKeEGpVILmv9p4VgiRYfM_GYZNg6WHnvDqseH7VCXiDQKM" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-label-bold text-slate-900">James Wilson</p>
+                                    <p class="text-[10px] text-slate-400">LSAT Prep • Completed</p>
+                                </div>
+                                <span
+                                    class="text-[10px] font-label-sm text-slate-400 bg-slate-50 px-2 py-0.5 rounded">Idle</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 text-sm font-label-bold text-slate-500 hover:bg-slate-50 transition-colors">
+                            Manage All Users
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- FAB for Quick Actions -->
+    <div class="fixed bottom-8 right-8">
+        <button
+            class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">help_center</span>
+        </button>
+    </div>
+</body>
+
+</html>

@@ -7,9 +7,10 @@ Static HTML layout for:
 - [x] Welcome Screen
 - [x] Exam page
 - [x] Result page
-- [ ] Admin Dashboard
+- [x] Admin Dashboard
 - [ ] User Management
 - [ ] Question Bank
+- [ ] Exam Session
 
 ## 🛠️ Tech Stack
 - HTML
