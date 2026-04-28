@@ -3,7 +3,7 @@ This project is an online exam platform currently in the early development stage
 
 ## 📌 Current Progress
 Static HTML layout for:
-- [ ] Login page
+- [x] Login page
 - [ ] Welcome Screen
 - [ ] Exam page
 - [ ] Result page
