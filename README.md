@@ -8,7 +8,7 @@ Static HTML layout for:
 - [x] Exam page
 - [x] Result page
 - [x] Admin Dashboard
-- [ ] User Management
+- [x] User Management
 - [ ] Question Bank
 - [ ] Exam Session
 
